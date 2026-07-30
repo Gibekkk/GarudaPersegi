@@ -1,7 +1,9 @@
 // Garuda Model 1
 // const URL = "https://teachablemachine.withgoogle.com/models/sOau28EB6/";
 // Garuda Model 2
-const URL = "https://teachablemachine.withgoogle.com/models/g61HAqKN8/";
+// const URL = "https://teachablemachine.withgoogle.com/models/g61HAqKN8/";
+// Garuda Model 3
+const URL = "https://teachablemachine.withgoogle.com/models/IdMNIa2Dw/";
   let model = null,
     webcam = null,
     maxPredictions = 0;
@@ -53,7 +55,7 @@ const URL = "https://teachablemachine.withgoogle.com/models/g61HAqKN8/";
     } catch (error) {
       console.error("Camera error:", error);
       alert(
-        "Kamera tidak didukung atau tidak diizinkan. Aplikasi akan ditutup."
+        "Camera is not supported or is not allowed. Game will now close."
       );
       window.close();
     }
