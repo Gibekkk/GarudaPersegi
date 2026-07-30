@@ -3,7 +3,9 @@
 // Garuda Model 2
 // const URL = "https://teachablemachine.withgoogle.com/models/g61HAqKN8/";
 // Garuda Model 3
-const URL = "https://teachablemachine.withgoogle.com/models/IdMNIa2Dw/";
+// const URL = "https://teachablemachine.withgoogle.com/models/IdMNIa2Dw/";
+// Garuda Local Model 3
+const URL = "./teachableMachine/model/";
   let model = null,
     webcam = null,
     maxPredictions = 0;
@@ -99,8 +101,8 @@ const URL = "https://teachablemachine.withgoogle.com/models/IdMNIa2Dw/";
       const prediction = await model.predict(posenetOutput);
 
       let highestConfidence = 0,
-        poseRead = "Idle";
-      controlPose = "Idle";
+        poseRead = "IdlePose";
+      controlPose = "IdlePose";
 
       for (let i = 0; i < maxPredictions; i++) {
         const confidence = prediction[i].probability;
@@ -114,8 +116,9 @@ const URL = "https://teachablemachine.withgoogle.com/models/IdMNIa2Dw/";
       }
       controlPose = poseRead;
     } else {
-      controlPose = "Idle";
+      controlPose = "IdlePose";
     }
+    console.log(controlPose);
 
     window.requestAnimationFrame(loop);
   }
